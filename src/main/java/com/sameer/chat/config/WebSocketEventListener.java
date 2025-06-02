@@ -12,4 +12,9 @@ import java.util.logging.Logger;
 @RequiredArgsConstructor
 public class WebSocketEventListener {
     private static final Logger logger = Logger.getLogger(String.valueOf(WebSocketEventListener.class));
+
+    @EventListener
+    public void handleWebSocketDisconnectListener(SessionDisconnectEvent event) {
+        logger.info("User disconnected");
+    }
 }
